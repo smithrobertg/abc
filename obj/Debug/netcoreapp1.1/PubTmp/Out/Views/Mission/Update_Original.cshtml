@@ -1,0 +1,72 @@
+﻿@model Mission
+
+<form asp-action="Update" method="post" class="form-horizontal" role="form">
+    <h2>Update Mission:</h2>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <input type="hidden" asp-for="MissionId" value="@Model.MissionId" />
+
+    <div class="form-group">
+        <label asp-for="MissionNumber" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="MissionNumber" class="form-control" />
+            <span asp-validation-for="MissionNumber" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MissionName" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="MissionName" class="form-control" />
+            <span asp-validation-for="MissionName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MissionCode" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="MissionCode" class="form-control" />
+            <span asp-validation-for="MissionCode" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MissionDate" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="MissionDate" class="form-control" />
+            <span asp-validation-for="MissionDate" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Description" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Gist" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Gist" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AirBase" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="AirBase" class="form-control" />
+            <span asp-validation-for="AirBase" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offest-2 col-md-5">
+            <input type="submit" class="btn btn-primary" value="Save Mission" />
+            <a class="btn btn-danger" asp-controller="Mission" asp-action="Delete" asp-route-id="@Model.MissionId"><span class="glyphicon glyphicon-remove"></span> Delete Mission</a>
+            <a class="btn btn-primary" asp-controller="Mission" asp-action="Index">Cancel</a>
+        </div>
+    </div>
+
+</form>

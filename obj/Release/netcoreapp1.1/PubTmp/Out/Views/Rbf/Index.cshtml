@@ -1,0 +1,32 @@
+﻿@model  IEnumerable<ReadBeforeFlight>
+
+<div class="alert-warning"><h1 class="text-center">Read Before Flight</h1></div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>RBF Code</th>
+            <th>Date Created</th>
+            <th>AirBase</th>
+            <th>Occurence</th>
+            <th>Aircraft</th>
+            <th>Grounded</th>
+            <th>Description</th>
+            <th>Read</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rbf in Model)
+        {
+                <tr class="info">
+                    <td><abc-rbf-code rbf="rbf" /></td>
+                    <td>@rbf.CreatedDate.ToString("d")</td>
+                    <td>@rbf.Airbase</td>
+                    <td>@rbf.Occurence</td>
+                    <td>@rbf.Aircraft</td>
+                    <td>@rbf.AircraftGrounded</td>
+                    <td>@rbf.Description</td>
+                    <td><a class="btn btn-primary btn-sm" asp-action="Read" asp-route-id="@rbf.Id"><i class="fa fa-vcard"></i> Read RBF...</a></td>
+                </tr>
+        }
+    </tbody>
+</table>

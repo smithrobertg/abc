@@ -1,0 +1,412 @@
+﻿@model RosterViewModel
+
+<h2 class="text-center">Roster for @Model.RosterDate.ToString("d")</h2>
+
+<div class="row">
+    <div class="col-sm-8">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title text-center">Plymouth</div>
+            </div>
+            <div class="panel-body">
+                <table class="table table-condensed table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <td>Line</td>
+                            <td>ID#</td>
+                            <td>Name</td>
+                            <td>Airbase</td>
+                            <td>Shift</td>
+                            <td>Status</td>
+                            <td>Assignment</td>
+                            <td>Hours</td>
+                            <td>OT/Work Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="info">
+                            <td>ADMIN</td>
+                            <td>0463</td>
+                            <td>Remkus, Sgt. Dennis M</td>
+                            <td>Plymouth</td>
+                            <td>ADMIN-D</td>
+                            <td>REG</td>
+                            <td>AC/CFI</td>
+                            <td>8.0</td>
+                            <td></td>
+                        </tr>
+                        <tr class="info">
+                            <td>ADMIN</td>
+                            <td>C622</td>
+                            <td>McLaughlin, DIV Kelly J</td>
+                            <td>Plymouth</td>
+                            <td>ADMIN-D</td>
+                            <td>REG</td>
+                            <td>CIVILIAN</td>
+                            <td>8.0</td>
+                            <td></td>
+                        </tr>
+                        <tr class="danger">
+                            <td>1</td>
+                            <td>2492</td>
+                            <td>Boulus, Tpr. Richard A</td>
+                            <td>Plymouth</td>
+                            <td>EVE</td>
+                            <td>SIC</td>
+                            <td>AC</td>
+                            <td>4.0</td>
+                            <td>1500-1900</td>
+                        </tr>
+                        <tr class="info">
+                            <td>1</td>
+                            <td>2492</td>
+                            <td>Boulus, Tpr. Richard A</td>
+                            <td>Plymouth</td>
+                            <td>EVE</td>
+                            <td>REG</td>
+                            <td>AC</td>
+                            <td>4.0</td>
+                            <td>1900-2300</td>
+                        </tr>
+                        <tr class="info">
+                            <td>1</td>
+                            <td>3443</td>
+                            <td>Grigg, Tpr. Justin W.</td>
+                            <td>Plymouth</td>
+                            <td>EVE</td>
+                            <td>REG</td>
+                            <td>TFO</td>
+                            <td>8.0</td>
+                            <td></td>
+                        </tr>
+                        <tr class="warning">
+                            <td>2</td>
+                            <td>2507</td>
+                            <td>Costa, Sgt. Mark A.</td>
+                            <td>Plymouth</td>
+                            <td>DOR</td>
+                            <td>REG</td>
+                            <td>AC/CFI</td>
+                            <td>8.0</td>
+                            <td></td>
+                        </tr>
+                        <tr class="warning">
+                            <td>2</td>
+                            <td>3289</td>
+                            <td>Hunt, Tpr. TimothyJ.</td>
+                            <td>Plymouth</td>
+                            <td>DOR</td>
+                            <td>REG</td>
+                            <td>TFO</td>
+                            <td>8.0</td>
+                            <td></td>
+                        </tr>
+                        <tr class="warning">
+                            <td>2</td>
+                            <td>3514</td>
+                            <td>Spooner, Tpr. Gregg A.</td>
+                            <td>Plymouth</td>
+                            <td>DOR</td>
+                            <td>REG</td>
+                            <td>TFO</td>
+                            <td>8.0</td>
+                            <td></td>
+                        </tr>
+                        <tr class="info">
+                            <td>3</td>
+                            <td>1732</td>
+                            <td>Pina, Tpr. John</td>
+                            <td>Plymouth</td>
+                            <td>EVE</td>
+                            <td>OT</td>
+                            <td>AC</td>
+                            <td>3.5</td>
+                            <td>1530-1900 BACKFILL RAB S/L</td>
+                        </tr>
+                        <tr class="danger">
+                            <td>3</td>
+                            <td>1732</td>
+                            <td>Pina, Tpr. John</td>
+                            <td>Plymouth</td>
+                            <td>EVE</td>
+                            <td>SIC</td>
+                            <td>AC</td>
+                            <td>1</td>
+                            <td>0700-0800</td>
+                        </tr>
+                        <tr class="info">
+                            <td>3</td>
+                            <td>1732</td>
+                            <td>Pina, Tpr. John</td>
+                            <td>Plymouth</td>
+                            <td>DAY</td>
+                            <td>REG</td>
+                            <td>AC/CFI</td>
+                            <td>7</td>
+                            <td>0800-1500</td>
+                        </tr>
+                        <tr class="danger">
+                            <td>3</td>
+                            <td>3011</td>
+                            <td>Kaupp, Tpr. Kevin M.</td>
+                            <td>Plymouth</td>
+                            <td>EVE</td>
+                            <td>PER</td>
+                            <td>TFO-PR</td>
+                            <td>8</td>
+                            <td>Auth MAC 2/1/17@@0700</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title text-center">Westover</div>
+            </div>
+            <div class="panel-body">
+                <table class="table table-condensed table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <td>Line</td>
+                            <td>ID#</td>
+                            <td>Name</td>
+                            <td>Airbase</td>
+                            <td>Shift</td>
+                            <td>Status</td>
+                            <td>Assignment</td>
+                            <td>Hours</td>
+                            <td>OT/Work Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="info">
+                            <td>ADMIN</td>
+                            <td>0463</td>
+                            <td>Remkus, Sgt. Dennis M</td>
+                            <td>Plymouth</td>
+                            <td>ADMIN-D</td>
+                            <td>REG</td>
+                            <td>AC/CFI</td>
+                            <td>8.0</td>
+                            <td></td>
+                        </tr>
+                        <tr class="info">
+                            <td>ADMIN</td>
+                            <td>C622</td>
+                            <td>McLaughlin, DIV Kelly J</td>
+                            <td>Plymouth</td>
+                            <td>ADMIN-D</td>
+                            <td>REG</td>
+                            <td>CIVILIAN</td>
+                            <td>8.0</td>
+                            <td></td>
+                        </tr>
+                        <tr class="danger">
+                            <td>1</td>
+                            <td>2492</td>
+                            <td>Boulus, Tpr. Richard A</td>
+                            <td>Plymouth</td>
+                            <td>EVE</td>
+                            <td>SIC</td>
+                            <td>AC</td>
+                            <td>4.0</td>
+                            <td>1500-1900</td>
+                        </tr>
+                        <tr class="info">
+                            <td>1</td>
+                            <td>2492</td>
+                            <td>Boulus, Tpr. Richard A</td>
+                            <td>Plymouth</td>
+                            <td>EVE</td>
+                            <td>REG</td>
+                            <td>AC</td>
+                            <td>4.0</td>
+                            <td>1900-2300</td>
+                        </tr>
+                        <tr class="info">
+                            <td>1</td>
+                            <td>3443</td>
+                            <td>Grigg, Tpr. Justin W.</td>
+                            <td>Plymouth</td>
+                            <td>EVE</td>
+                            <td>REG</td>
+                            <td>TFO</td>
+                            <td>8.0</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title text-center">Lawrence</div>
+            </div>
+            <div class="panel-body">
+                <table class="table table-condensed table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <td>Line</td>
+                            <td>ID#</td>
+                            <td>Name</td>
+                            <td>Airbase</td>
+                            <td>Shift</td>
+                            <td>Status</td>
+                            <td>Assignment</td>
+                            <td>Hours</td>
+                            <td>OT/Work Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="info">
+                            <td>ADMIN</td>
+                            <td>0463</td>
+                            <td>Remkus, Sgt. Dennis M</td>
+                            <td>Plymouth</td>
+                            <td>ADMIN-D</td>
+                            <td>REG</td>
+                            <td>AC/CFI</td>
+                            <td>8.0</td>
+                            <td></td>
+                        </tr>
+                        <tr class="info">
+                            <td>ADMIN</td>
+                            <td>C622</td>
+                            <td>McLaughlin, DIV Kelly J</td>
+                            <td>Plymouth</td>
+                            <td>ADMIN-D</td>
+                            <td>REG</td>
+                            <td>CIVILIAN</td>
+                            <td>8.0</td>
+                            <td></td>
+                        </tr>
+                        <tr class="danger">
+                            <td>1</td>
+                            <td>2492</td>
+                            <td>Boulus, Tpr. Richard A</td>
+                            <td>Plymouth</td>
+                            <td>EVE</td>
+                            <td>SIC</td>
+                            <td>AC</td>
+                            <td>4.0</td>
+                            <td>1500-1900</td>
+                        </tr>
+                        <tr class="info">
+                            <td>1</td>
+                            <td>2492</td>
+                            <td>Boulus, Tpr. Richard A</td>
+                            <td>Plymouth</td>
+                            <td>EVE</td>
+                            <td>REG</td>
+                            <td>AC</td>
+                            <td>4.0</td>
+                            <td>1900-2300</td>
+                        </tr>
+                        <tr class="info">
+                            <td>1</td>
+                            <td>3443</td>
+                            <td>Grigg, Tpr. Justin W.</td>
+                            <td>Plymouth</td>
+                            <td>EVE</td>
+                            <td>REG</td>
+                            <td>TFO</td>
+                            <td>8.0</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title text-center">7 Day</div>
+            </div>
+            <div class="panel-body">
+                <table class="table table-condensed table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <td>Date</td>
+                            <td>ID#</td>
+                            <td>Name</td>
+                            <td>Status</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="info">
+                            <td>7/4/17</td>
+                            <td>0463</td>
+                            <td>Remkus</td>
+                            <td>VAC</td>
+                        </tr>
+                        <tr class="info">
+                            <td>7/5/17</td>
+                            <td>0463</td>
+                            <td>Remkus</td>
+                            <td>VAC</td>
+                        </tr>
+                        <tr class="danger">
+                            <td>7/6/17</td>
+                            <td>0463</td>
+                            <td>Remkus</td>
+                            <td>SIF</td>
+                        </tr>
+                        <tr class="info">
+                            <td>7/7/17</td>
+                            <td>0463</td>
+                            <td>Remkus</td>
+                            <td>VAC</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title text-center">30 Day</div>
+            </div>
+            <div class="panel-body">
+                <table class="table table-condensed table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <td>Date</td>
+                            <td>ID#</td>
+                            <td>Name</td>
+                            <td>Status</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="info">
+                            <td>7/4/17</td>
+                            <td>3443</td>
+                            <td>Grigg</td>
+                            <td>VAC</td>
+                        </tr>
+                        <tr class="info">
+                            <td>7/5/17</td>
+                            <td>3443</td>
+                            <td>Grigg</td>
+                            <td>VAC</td>
+                        </tr>
+                        <tr class="danger">
+                            <td>7/6/17</td>
+                            <td>3443</td>
+                            <td>Grigg</td>
+                            <td>PER</td>
+                        </tr>
+                        <tr class="info">
+                            <td>7/7/17</td>
+                            <td>3443</td>
+                            <td>Grigg</td>
+                            <td>VAC</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

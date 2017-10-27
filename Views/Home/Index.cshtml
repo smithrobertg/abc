@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <br />
+        <div class="panel panel-primary">
+            <div class="panel-heading text-center">
+                <span class="panel-title">Night Currency/NVG</span>
+            </div>
+            <div class="panel-body">
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading text-center">
+                <span class="panel-title">Certifations/License</span>
+            </div>
+            <div class="panel-body">
+                <table class="table table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <td>Cert</td>
+                            <td>Date</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>License</td>
+                            <td>4/1/17</td>
+                        </tr>
+                        <tr>
+                            <td>Medical</td>
+                            <td>6/30/17</td>
+                        </tr>
+                        <tr>
+                            <td>Flight Status</td>
+                            <td>9/15/17</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading text-center"><span class="panel-title">Upcoming Missions</span></div>
+            <div class="panel-body">
+                <table class="table table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <td>Date</td>
+                            <td>Description</td>
+                            <td>Note</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="warning">
+                            <td>3/21/17</td>
+                            <td>Patrol</td>
+                            <td>JPJ</td>
+                        </tr>
+                        <tr class="warning">
+                            <td>3/20/17</td>
+                            <td>Search</td>
+                            <td>TJR</td>
+                        </tr>
+                        <tr>
+                            <td>3/19/17</td>
+                            <td>Patrol</td>
+                            <td>JPH</td>
+                        </tr>
+                        <tr>
+                            <td>3/18/17</td>
+                            <td>Training</td>
+                            <td>JPJ/KMK</td>
+                        </tr>
+                        <tr>
+                            <td>3/18/17</td>
+                            <td>Search</td>
+                            <td>RDS</td>
+                        </tr>
+                        <tr>
+                            <td>3/17/17</td>
+                            <td>Training</td>
+                            <td>JPJ/JWG</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <br />
+        @* Aircraft status panel *@
+        @await Component.InvokeAsync("AircraftStatusList");
+        <img src="~/images/map-massachusetts.PNG" class="img-rounded img-responsive" alt="Commonwealth of Massachusetts" />
+        <h4>AIRBORNE COMMANDER is the industry leader in avaition operations control software.  It provides a high-performance, cloud-based solution to any Airwing.</h4>
+    </div>
+    <div class="col-md-4">
+        <br />
+
+        @* FRAT status panel*@
+        @await  Component.InvokeAsync("FratStatusPanel")
+
+        @* RBF panel *@
+        @await Component.InvokeAsync("ReadBeforeFlight")
+    </div>
+</div>

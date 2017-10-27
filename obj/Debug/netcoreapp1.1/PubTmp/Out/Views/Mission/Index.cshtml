@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Mission>
+
+<div class="text-left">
+    <a class="btn btn-primary" asp-controller="Mission" asp-action="NewMission">Add Mission...</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Mission Number</th>
+            <th>Mission Date</th>
+            <th>Name</th>
+            <th>Code</th>
+            <th>AirBase</th>
+            <th>Description</th>
+            <th>Gist</th>
+            <th>Edit/Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mission in Model)
+        {
+            @if (!(mission.Gist == null ? false : mission.Gist.ToUpper().Contains("CANCELLED")))
+            {
+                <tr class="active">
+                    <td>@mission.MissionNumber</td>
+                    <td>@mission.MissionDate.ToString("d")</td>
+                    <td>@mission.MissionName</td>
+                    <td>@mission.MissionCode</td>
+                    <td>@mission.AirBase</td>
+                    <td>@mission.Description</td>
+                    <td>@mission.Gist</td>
+                    <td>
+                        <a class="btn btn-primary btn-xs" asp-controller="Mission" asp-action="Update" asp-route-id="@mission.MissionId"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr class="danger">
+                    <td>@mission.MissionNumber</td>
+                    <td>@mission.MissionDate.ToString("d")</td>
+                    <td>@mission.MissionName</td>
+                    <td>@mission.MissionCode</td>
+                    <td>@mission.AirBase</td>
+                    <td>@mission.Description</td>
+                    <td>@mission.Gist</td>
+                    <td>
+                        <a class="btn btn-primary btn-xs" asp-controller="Mission" asp-action="Update" asp-route-id="@mission.MissionId"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

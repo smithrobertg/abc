@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="AirborneCommander-Development" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\smith\\Google\ Drive\\Projects\\Visual\ Studio\ Projects\\AirborneCommander\\Airborne\.Commander\.AspNetCore\\obj\\Debug\\netcoreapp1\.1\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Mission>
+
+@if (Model.Count() > 1)
+{
+    <a>
+        <span class="badge">
+            <span id="mission-status">
+                @Model.Count() Missions
+            </span>
+            <i class="fa fa-rocket"></i>
+        </span>
+    </a>
+}
+else if (Model.Count() == 1)
+{
+    <a>
+        <span class="badge">
+            <span id="mission-status">
+                1 Mission
+            </span>
+            <i class="fa fa-rocket"></i>
+        </span>
+    </a>
+}
+else
+{
+    <a>
+        <span class="badge">
+            <span class="glyphicon glyphicon-alert"></span>
+            <span id="mission-status">
+                No Missions Detected
+            </span>
+        </span>
+    </a>
+}

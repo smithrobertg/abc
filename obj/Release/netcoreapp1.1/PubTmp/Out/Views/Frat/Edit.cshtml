@@ -1,0 +1,287 @@
+@model FratViewModel
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h2>Edit Static FRAT Form:</h2>
+
+<form asp-action="Edit" method="post" class="form-horizontal" role="form">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Frat.FratDate" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Frat.FratDate" class="form-control" />
+            <span asp-validation-for="Frat.FratDate" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Frat.Shift" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Frat.Shift" class="form-control" />
+            <span asp-validation-for="Frat.Shift" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Frat.AirBase" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Frat.AirBase" class="form-control" />
+            <span asp-validation-for="Frat.AirBase" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Frat.Crew" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Frat.Crew" class="form-control" />
+            <span asp-validation-for="Frat.Crew" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Frat.WeatherBriefing" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Frat.WeatherBriefing" class="form-control" />
+            <span asp-validation-for="Frat.WeatherBriefing" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Frat.AirbaseVmcOrImc" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Frat.AirbaseVmcOrImc" class="form-control" />
+            <span asp-validation-for="Frat.AirbaseVmcOrImc" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Frat.StatewideVmcOrImc" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Frat.StatewideVmcOrImc" class="form-control" />
+            <span asp-validation-for="Frat.StatewideVmcOrImc" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Frat.Tfr" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Frat.Tfr" class="form-control" />
+            <span asp-validation-for="Frat.Tfr" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Frat.Aircraft" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Frat.Aircraft" class="form-control" />
+            <span asp-validation-for="Frat.Aircraft" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Frat.Hobbs" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Frat.Hobbs" class="form-control" />
+            <span asp-validation-for="Frat.Hobbs" class="text-danger"></span>
+        </div>
+    </div>
+    <hr />
+
+    <!-- Static Frat Form -->
+    <div class="panel panel-primary">
+        <div class="panel-heading"><span class="panel-title">Pilot</span></div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label asp-for="StaticFrat.Pilot_IllnessPhysicalCondition" class="col-md-3 control-label"></label>
+                <div class="col-md-9">
+                    @*<input asp-for="StaticFrat.Pilot_IllnessPhysicalCondition" class="form-control" />
+                        <span asp-validation-for="StaticFrat.Pilot_IllnessPhysicalCondition" class="text-danger"></span>*@
+                    <label class="radio alert-success"><input type="radio" asp-for="StaticFrat.Pilot_IllnessPhysicalCondition" value="0" />No Problems.  Mentally and physically in shape.</label>
+                    <label class="radio alert-warning"><input type="radio" asp-for="StaticFrat.Pilot_IllnessPhysicalCondition" value="1" />Nuisance, minor pain, illness or minor mental stress.</label><span class="">Discuss CRM methods to minimize errors caused by degraded health</span>
+                    <label class="radio alert-danger"><input type="radio" asp-for="StaticFrat.Pilot_IllnessPhysicalCondition" value="2" />Illness requiring medication, persistent pain or discomfort, major mental stress</label><span>STOP!  Get released for duty by flight medic</span>
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="StaticFrat.Pilot_Medication" class="col-md-3 control-label"></label>
+                <div class="col-md-9">
+                    <div class="btn-group" data-toggle="buttons">
+                        <div>
+                            <label class="btn btn-success">
+                                <input type="radio" asp-for="StaticFrat.Pilot_Medication" value="0" /> 0 - No medication in last 24 hours
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-warning">
+                                <input type="radio" asp-for="StaticFrat.Pilot_Medication" value="1" /> 1 - Approved OTC or prescription medication
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-danger">
+                                <input type="radio" asp-for="StaticFrat.Pilot_Medication" value="2" /> 2 - Unapproved OTC or prescription medication ***STOP***
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="StaticFrat.Pilot_Fatigue" class="col-md-3 control-label"></label>
+                <div class="col-md-9">
+                    <div class="btn-group" data-toggle="buttons">
+                        <div>
+                            <label class="btn btn-success">
+                                <input type="radio" asp-for="StaticFrat.Pilot_Fatigue" value="0" /> 0 - No fatigue. 6-8 hours sleep.
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-warning">
+                                <input type="radio" asp-for="StaticFrat.Pilot_Fatigue" value="1" /> 1 - Some fatigue. Less than 6 hours sleep.
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-danger">
+                                <input type="radio" asp-for="StaticFrat.Pilot_Fatigue" value="2" /> 2 - Mentally or physically fatigued. Less than 4 hours sleep.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="StaticFrat.Pilot_TotalFlightTime" class="col-md-3 control-label"></label>
+                <div class="col-md-9">
+                    <div class="btn-group" data-toggle="buttons">
+                        <div>
+                            <label class="btn btn-success">
+                                <input type="radio" asp-for="StaticFrat.Pilot_TotalFlightTime" value="0" /> 0 - Over 3000 hours tt
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-warning">
+                                <input type="radio" asp-for="StaticFrat.Pilot_TotalFlightTime" value="1" /> 1 - Between 1000 and 3000 hours tt
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-danger">
+                                <input type="radio" asp-for="StaticFrat.Pilot_TotalFlightTime" value="2" /> 2 - Below 1000 hours tt
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="StaticFrat.Pilot_FlightTimeInMakeModel" class="col-md-3 control-label"></label>
+                <div class="col-md-9">
+                    <div class="btn-group" data-toggle="buttons">
+                        <div>
+                            <label class="btn btn-success">
+                                <input type="radio" asp-for="StaticFrat.Pilot_FlightTimeInMakeModel" value="0" /> 0 - Over 1000 hours in make/model
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-warning">
+                                <input type="radio" asp-for="StaticFrat.Pilot_FlightTimeInMakeModel" value="1" /> 1 - Between 500 and 1000 hours in make/model
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-danger">
+                                <input type="radio" asp-for="StaticFrat.Pilot_FlightTimeInMakeModel" value="2" /> 2 - Below 500 hours in make/model
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="StaticFrat.Pilot_LastFlightInMakeModel" class="col-md-3 control-label"></label>
+                <div class="col-md-9">
+                    <div class="btn-group" data-toggle="buttons">
+                        <div>
+                            <label class="btn btn-success">
+                                <input type="radio" asp-for="StaticFrat.Pilot_LastFlightInMakeModel" value="0" /> 0 - Within 1 month
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-warning">
+                                <input type="radio" asp-for="StaticFrat.Pilot_LastFlightInMakeModel" value="1" /> 1 - Between 1 and 3 months
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-danger">
+                                <input type="radio" asp-for="StaticFrat.Pilot_LastFlightInMakeModel" value="2" /> 2 - Over 3 months (not current for flight)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="StaticFrat.Pilot_CurrencyTraining" class="col-md-3 control-label"></label>
+                <div class="col-md-9">
+                    <div class="btn-group" data-toggle="buttons">
+                        <div>
+                            <label class="btn btn-success">
+                                <input type="radio" asp-for="StaticFrat.Pilot_CurrencyTraining" value="0" /> 0 - Previous 6 months (factory, sim, recurrent training, etc.)
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-warning">
+                                <input type="radio" asp-for="StaticFrat.Pilot_CurrencyTraining" value="1" /> 1 - Training conducted 6-12 months prior
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-danger">
+                                <input type="radio" asp-for="StaticFrat.Pilot_CurrencyTraining" value="2" /> 2 - None in the last 12 months
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="StaticFrat.Pilot_ImcPrep" class="col-md-3 control-label"></label>
+                <div class="col-md-9">
+                    <div class="btn-group" data-toggle="buttons">
+                        <div>
+                            <label class="btn btn-success">
+                                <input type="radio" asp-for="StaticFrat.Pilot_ImcPrep" value="0" /> 0 - IFR current - IIMC training within last 6 months
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-warning">
+                                <input type="radio" asp-for="StaticFrat.Pilot_ImcPrep" value="1" /> 1 - IFR currency 6 months old - IIMC training more than 6 months prior
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-danger">
+                                <input type="radio" asp-for="StaticFrat.Pilot_ImcPrep" value="2" /> 2 - No IFR currency or IIMC training in last 12 months
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading"><span class="panel-title">TFO or Co-pilot</span></div>
+        <div class="panel-body"></div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading"><span class="panel-title">Aircraft</span></div>
+        <div class="panel-body"></div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-5">
+            <input type="submit" class="btn btn-primary" value="Save Static FRAT Form" />
+            <a class="btn btn-primary" asp-controller="Frat" asp-action="Index">Cancel</a>
+        </div>
+    </div>
+
+</form>

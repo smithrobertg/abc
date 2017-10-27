@@ -1,0 +1,134 @@
+﻿@model Mission
+
+<form asp-action="Update" method="post" class="form-horizontal" role="form">
+    <input type="hidden" asp-for="MissionId" value="@Model.MissionId" />
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#missionInfo">Mission Info</a></li>
+        <li><a data-toggle="tab" href="#homelandSecurity">Homeland Security</a></li>
+        <li><a data-toggle="tab" href="#crew">Crew</a></li>
+        <li><a data-toggle="tab" href="#aircraft">Aircraft</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="missionInfo" class="tab-pane fade in active">
+            <h3>Mission Information:</h3>
+            <div class="row">
+                <div class="form-group col-sm-4">
+                    <label asp-for="MissionNumber" class="control-label"></label>
+                    <input asp-for="MissionNumber" class="form-control" />
+                    <span asp-validation-for="MissionNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="MissionName" class="control-label"></label>
+                    <input asp-for="MissionName" class="form-control" />
+                    <span asp-validation-for="MissionName" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="MissionCode" class="control-label"></label>
+                    <input asp-for="MissionCode" class="form-control" />
+                    <span asp-validation-for="MissionCode" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!--
+                         <div class="form-group">
+                            <label asp-for="MissionDate" class="col-md-2 control-label"></label>
+                            <div class="col-md-5">
+                                <input asp-for="MissionDate" class="form-control" />
+                                <span asp-validation-for="MissionDate" class="text-danger"></span>
+                            </div>
+                        </div>
+            -->
+
+            <div class="row">
+                <div class="form-group col-sm-4">
+                    <label asp-for="MissionDate" class="control-label"></label>
+                    <input asp-for="MissionDate" class="form-control" />
+                    <span asp-validation-for="MissionDate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="RequestDate" class="control-label"></label>
+                    <input asp-for="RequestDate" class="form-control" />
+                    <span asp-validation-for="RequestDate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="AirBase" class="control-label"></label>
+                    <input asp-for="AirBase" class="form-control" />
+                    <span asp-validation-for="AirBase" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-12">
+                    <label asp-for="Description" class="control-label"></label>
+                    <textarea asp-for="Description" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-9">
+                    <label asp-for="Gist" class="control-label"></label>
+                    <textarea asp-for="Gist" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+        <div id="homelandSecurity" class="tab-pane fade">
+            <div class="row">
+                <h3 class="col-md-4">Homeland Security</h3>
+                <div class="checkbox-inline col-md-4">
+                    <label>
+                        <input type="checkbox" /> Check if Homeland Security Mission
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading text-center">
+                            <h3 class="panel-title">Power Plants</h3>
+                        </div>
+                        <div class="panel-body">
+                            Power Plant Sites/Facilities
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading text-center">
+                            <h3 class="panel-title">Transportation</h3>
+                        </div>
+                        <div class="panel-body">
+                            Transportation Sites/Facilities
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading text-center">
+                            <h3 class="panel-title">Other Facilities</h3>
+                        </div>
+                        <div class="panel-body">
+                            Other Sites/Facilities
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="crew" class="tab-pane fade">
+            <h3>Crew</h3>
+        </div>
+        <div id="aircraft" class="tab-pane fade">
+            <h3>Aircraft</h3>
+        </div>
+    </div>
+
+    <hr />
+    <div class="form-group">
+        <div class="col-md-offest-2 col-md-5">
+            <input type="submit" class="btn btn-primary" value="Save Mission" />
+            <a class="btn btn-danger" asp-controller="Mission" asp-action="Delete" asp-route-id="@Model.MissionId"><span class="glyphicon glyphicon-remove"></span> Delete Mission</a>
+            <a class="btn btn-primary" asp-controller="Mission" asp-action="Index">Cancel</a>
+        </div>
+    </div>
+</form>

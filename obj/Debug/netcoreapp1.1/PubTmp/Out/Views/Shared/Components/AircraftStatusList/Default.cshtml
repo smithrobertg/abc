@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Aircraft>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h4 class="panel-title text-center"><b>Aircraft Status</b></h4>
+    </div>
+    <div class="panel-body">
+        <div class="list-group">
+            @foreach (var aircraft in Model)
+            {
+                @if (aircraft.IsActive)
+                {
+                    <a asp-controller="Aircraft" asp-action="Update" asp-route-id="@aircraft.AircraftId" class="list-group-item list-group-item-success">
+                        <span><b>@aircraft.TailNumber</b></span>
+                        <span> - In-Service (@aircraft.Status)</span>
+                        <span class="pull-right">@aircraft.CallSign</span>
+                    </a>
+                }
+                else
+                {
+                    <a class="list-group-item list-group-item-danger" asp-controller="Aircraft" asp-action="Update" asp-route-id="@aircraft.AircraftId">
+                        <span><b>@aircraft.TailNumber <i class="fa fa-warning"> - OUT OF SERVICE (@aircraft.Status)</i></b></span>
+                        <span></span>
+                        <span class="pull-right">@aircraft.CallSign</span>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</div>

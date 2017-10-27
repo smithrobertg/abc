@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ReadBeforeFlight>
+
+<div class="panel panel-primary">
+    <div class="panel-heading text-center">
+        <span class="panel-title"><a asp-controller="Rbf" asp-action="Index">Alerts (RBF/Discrepancies)</a></span>
+    </div>
+    <div class="panel-body">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <td>Date</td>
+                    <td>RBF</td>
+                    <td><i class="fa fa-plane"></i></td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var rbf in Model.OrderByDescending(r => r.CreatedDate))
+                {
+                    if (rbf.AircraftGrounded)
+                    {
+                        <tr class="danger">
+                            <td>@rbf.CreatedDate.ToString("MM/dd/yy")</td>
+                            <td><a asp-controller="Rbf" asp-action="Read" asp-route-id="@rbf.Id" class="text-info">@rbf.ShortDescription(20)</a></td>
+                            <td><i class="fa fa-warning text-danger"></i></td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr class="success">
+                            <td>@rbf.CreatedDate.ToString("MM/dd/yy")</td>
+                            <td><a asp-controller="Rbf" asp-action="Read" asp-route-id="@rbf.Id" class="text-info">@rbf.ShortDescription(20)</a></td>
+                            <td><i class="fa fa-check text-success"></i></td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="panel-footer clearfix">
+        <div class="text-danger text-center"><em>Must read each RBF report</em></div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Aircraft>
+
+<div class="text-left">
+    <a class="btn btn-primary" asp-controller="Aircraft" asp-action="Add">Add Aircraft...</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>CallSign</th>
+            <th>Tail Number</th>
+            <th>Airbase</th>
+            <th>Make/Model/Year</th>
+            <th>Model S Code</th>
+            <th>Status</th>
+            <th>Edit/Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var aircraft in Model)
+        {
+            @if (aircraft.IsActive)
+            {
+                <tr class="active">
+                    <td>@aircraft.CallSign</td>
+                    <td>@aircraft.TailNumber</td>
+                    <td>Plymouth</td>
+                    <td>@aircraft.Make @aircraft.Model (@aircraft.YearManufactured)</td>
+                    <td>@aircraft.ModeSCode</td>
+                    <td>@aircraft.Status</td>
+                    <td>
+                        <a class="btn btn-primary btn-xs" asp-controller="Aircraft" asp-action="Update" asp-route-id="@aircraft.AircraftId"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                        <a class="btn btn-primary btn-xs" asp-controller="Aircraft" asp-action="Delete" asp-route-id="@aircraft.AircraftId"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr class="danger">
+
+                    <td>@aircraft.CallSign &nbsp; <span class="glyphicon glyphicon-alert"></span></td>
+                    <td>@aircraft.TailNumber</td>
+                    <td>Plymouth</td>
+                    <td>@aircraft.Make @aircraft.Model (@aircraft.YearManufactured)</td>
+                    <td>@aircraft.ModeSCode</td>
+                    <td>@aircraft.Status</td>
+                    <td>
+                        <a class="btn btn-primary btn-xs" asp-controller="Aircraft" asp-action="Update" asp-route-id="@aircraft.AircraftId"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                        <a class="btn btn-primary btn-xs" asp-controller="Aircraft" asp-action="Delete" asp-route-id="@aircraft.AircraftId"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

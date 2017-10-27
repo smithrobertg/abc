@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Aircraft>
+
+<div class="text-left">
+    <a class="btn btn-primary" asp-controller="Aircraft" asp-action="Add">Add Aircraft...</a>
+</div>
+
+@foreach (var aircraft in Model)
+{
+    <div>
+        <h3>@aircraft.CallSign | @aircraft.TailNumber</h3>
+        <h4>@aircraft.Make @aircraft.Model (@aircraft.YearManufactured) | @aircraft.ModeSCode | @aircraft.Status
+        | <a class="btn btn-primary btn-xs" asp-controller="Aircraft" asp-action="Update" asp-route-id="@aircraft.AircraftId"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+          <a class="btn btn-primary btn-xs" asp-controller="Aircraft" asp-action="Delete" asp-route-id="@aircraft.AircraftId"><span class="glyphicon glyphicon-remove"></span> Delete</a></h4>
+    </div>
+}

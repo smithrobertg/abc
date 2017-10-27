@@ -1,0 +1,9 @@
+﻿@model Mission
+
+<div>
+    <h3>Mission Number: @Model.MissionNumber, Date: @Model.MissionDate.Date.ToString("d"), Name: @Model.MissionName
+        | <a class="btn btn-primary btn-xs" asp-controller="Mission" asp-action="Update" asp-route-id="@Model.MissionId"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+          <a class="btn btn-primary btn-xs" asp-controller="Mission" asp-action="Delete" asp-route-id="@Model.MissionId"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+        <br />Mission Code: @Model.MissionCode</h3>
+    <h4>AirBase: @Model.AirBase; Description @Model.Description; Gist: @Model.Gist</h4>
+</div>

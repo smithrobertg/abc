@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Frat>
+
+<div class="text-left">
+    <a class="btn btn-primary" asp-controller="Frat" asp-action="Create">Add Static FRAT...</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Shift</th>
+            <th>Airbase</th>
+            <th>Crew</th>
+            <th>Aircraft</th>
+            <th>Frat Total</th>
+            <th>Add Dynamic FRAT</th>
+            <th>Edit/Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var frat in Model)
+        {
+            @if (frat.StaticFrat != null)
+            {
+                <tr class="active">
+                    <td>@frat.FratDate.ToString("d")</td>
+                    <td>@frat.Shift</td>
+                    <td>@frat.AirBase</td>
+                    <td>@frat.Crew</td>
+                    <td>@frat.Aircraft?.CallSign</td>
+                    <td>@frat.Total</td>
+                    <td><a class="btn btn-primary btn-xs" asp-controller="Frat" asp-action="Edit" asp-route-id="@frat.Id"><i class="fa fa-paper-plane-o"></i> Add Dynamic FRAT</a></td>
+                    <td>
+                        <a class="btn btn-primary btn-xs" asp-controller="Frat" asp-action="Edit" asp-route-id="@frat.Id"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                        <a class="btn btn-primary btn-xs" asp-controller="Frat" asp-action="Delete" asp-route-id="@frat.Id"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr class="danger">
+                    <td>@frat.FratDate.ToString("d")</td>
+                    <td>@frat.Shift</td>
+                    <td>@frat.AirBase</td>
+                    <td>@frat.Crew</td>
+                    <td>@frat.Aircraft?.CallSign</td>
+                    <td>@frat.Total</td>
+                    <td><a class="btn btn-primary btn-xs" asp-controller="Frat" asp-action="Edit" asp-route-id="@frat.Id"><i class="fa fa-paper-plane-o"></i> Add Dynamic FRAT</a></td>
+                    <td>
+                        <a class="btn btn-primary btn-xs" asp-controller="Frat" asp-action="Edit" asp-route-id="@frat.Id"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                        <a class="btn btn-primary btn-xs" asp-controller="Frat" asp-action="Delete" asp-route-id="@frat.Id"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

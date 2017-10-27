@@ -1,0 +1,19 @@
+﻿@model MissionListViewModel
+
+<h1>@Model.MissionTitle</h1>
+<div class="text-left">
+    <a class="btn btn-primary" asp-controller="Mission" asp-action="NewMission">Add Mission...</a>
+</div>
+
+@foreach (var mission in Model.Missions)
+{
+    @*
+    <div>
+        <h2>Mission Number: @mission.MissionNumber, Date: @mission.MissionDate.Date.ToString("d"), Name: @mission.MissionName</h2>
+        <h3>Mission Code: @mission.MissionCode</h3>
+        <h4>AirBase: @mission.AirBase; Description @mission.Description; Gist: @mission.Gist</h4>
+    </div>
+    *@
+
+    @Html.Partial("MissionOverviewSummary", mission)
+}

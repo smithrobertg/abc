@@ -1,0 +1,127 @@
+﻿@model Aircraft
+
+<form asp-action="Add" method="post" class="form-horizontal" role="form">
+    <h2>Create New Aircraft:</h2>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="CallSign" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="CallSign" class="form-control" />
+            <span asp-validation-for="CallSign" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="YearManufactured" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="YearManufactured" class="form-control" />
+            <span asp-validation-for="YearManufactured" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Make" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Make" class="form-control" />
+            <span asp-validation-for="Make" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Model" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Model" class="form-control" />
+            <span asp-validation-for="Model" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ModeSCode" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="ModeSCode" class="form-control" />
+            <span asp-validation-for="ModeSCode" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TailNumber" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="TailNumber" class="form-control" />
+            <span asp-validation-for="TailNumber" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SerialNumber" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="SerialNumber" class="form-control" />
+            <span asp-validation-for="SerialNumber" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AircraftType" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="AircraftType" class="form-control" />
+            <span asp-validation-for="AircraftType" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FlightHobbs" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="FlightHobbs" class="form-control" />
+            <span asp-validation-for="FlightHobbs" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AircraftTotalTime" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="AircraftTotalTime" class="form-control" />
+            <span asp-validation-for="AircraftTotalTime" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Engines" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Engines" class="form-control" />
+            <span asp-validation-for="Engines" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Landings" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Landings" class="form-control" />
+            <span asp-validation-for="Landings" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IsActive" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="IsActive" class="form-control" />
+            <span asp-validation-for="IsActive" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Status" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Status" class="form-control" />
+            <span asp-validation-for="Status" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-5">
+            <input type="submit" class="btn btn-primary" value="Save Aircraft" />
+            <a class="btn btn-primary" asp-controller="Aircraft" asp-action="Index">Cancel</a>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Frat>
+
+<div class="panel panel-primary">
+    <div class="panel-heading text-center">
+        <span class="panel-title">
+            <a asp-controller="Frat" asp-action="Index">FRAT Status</a>
+        </span>
+        <a class="btn btn-success btn-xs pull-right" asp-controller="Frat" asp-action="Create">New</a>
+    </div>
+    <div class="panel-body">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <td>Date</td>
+                    <td>Crew</td>
+                    <td>AirBase</td>
+                    <td>FRAT<br />Total</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var frat in Model.OrderByDescending(f => f.FratDate))
+                {
+                    if (frat.Total > 23)
+                    {
+                        <tr class="danger">
+                            <td>@frat.FratDate.ToString("MM/dd/yy")</td>
+                            <td>@frat.Crew</td>
+                            <td>@frat.AirBase</td>
+                            <td>@frat.Total <i class="fa fa-warning fa-pull-right text-danger"></i></td>
+                        </tr>
+                    }
+                    else if (frat.Total > 11)
+                    {
+                        <tr class="warning">
+                            <td>@frat.FratDate.ToString("MM/dd/yy")</td>
+                            <td>@frat.Crew</td>
+                            <td>@frat.AirBase</td>
+                            <td>@frat.Total <i class="fa fa-eye fa-pull-right text-warning"></i></td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr class="success">
+                            <td>@frat.FratDate.ToString("MM/dd/yy")</td>
+                            <td>@frat.Crew</td>
+                            <td>@frat.AirBase</td>
+                            <td>@frat.Total <i class="fa fa-check fa-pull-right text-success"></i></td>
+                        </tr>
+
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
